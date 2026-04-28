@@ -33,6 +33,11 @@ header {
     font-size: 11px;
     letter-spacing: 1.5px;
     cursor: pointer;
+    transition: all 0.5s ease;
+}
+.nav-bar li:hover {
+    color: #2d4a22;
+    font-weight: bold;
 }
 
 .hero {
@@ -99,6 +104,7 @@ h2 {
     position: relative;
     overflow: hidden;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 .service-card img {
@@ -106,6 +112,11 @@ h2 {
     height: 450px;
     object-fit: cover;
     display: block;
+    transition: all 0.3s ease;
+}
+.service-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.7);
 }
 
 .service-card h3 {
