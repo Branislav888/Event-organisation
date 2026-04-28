@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f7f0;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    padding-top: 150px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-weight: 300;
+}
+
+button {
+    display: block;
+    margin: 0 auto 100px auto;
+    padding: 15px 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #2d4722;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 5%;
+    flex-wrap: wrap;
+}
+
+.services > div {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.services img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .services { flex-direction: column; align-items: center; }
+}
