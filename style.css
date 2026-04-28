@@ -45,14 +45,6 @@ header {
     padding: 60px 20px;
 }
 
-.est {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 4px;
-    display: block;
-    margin-bottom: 10px;
-}
-
 h1 {
     font-size: 60px;
     text-transform: uppercase;
@@ -63,8 +55,10 @@ h1 {
 
 .hero p {
     font-style: italic;
-    color: #666;
+    color: #ffffff;
     margin-bottom: 30px;
+    font-size: 30px;
+    margin-top: 60px;
 }
 
 .cta-button {
@@ -130,21 +124,6 @@ h2 {
     font-style: italic;
 }
 
-.but-img {
-    position: absolute;
-    bottom: 40px;
-    right: 30px;
-    border: 1px solid rgba(255,255,255,0.5);
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(58, 57, 57);
-    
-}
-
 .background {
     position: absolute;
     top: 0;
@@ -164,4 +143,11 @@ h2 {
     position: relative;
     color:  rgba(255, 255, 255, 0.9);
     z-index: 1;
+}
+
+.but-card {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
