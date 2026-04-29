@@ -1,55 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Organisation - Reservations</title>
+    <title>Reservations | Event Organisation</title>
     <link rel="stylesheet" href="rezervations.css">
-    <link rel ="banner" href="Images/logo.png">
 </head>
+
 <body>
-    
-    <header>
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="rezervations.html">Rezervations</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <h2>Reservations</h2>
-    <p>Here you can make a reservation for a parking space at one of our events. Please fill out the form below with your details and the date and time of your reservation.</p>
+    <section class="hero-section">
+        <img src="Images/Background.png" alt="Background" class="background">
 
-    <div class="form">
-        <form> 
-            <div class="inputNames">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Last name">
-            </div>
-            <div class="inputInfo">
-                <input type="email" placeholder="Email@">
-                <input type="tel" placeholder="Phone number">
-            </div>
-            <div class="inputCar">
-                <input type="text" placeholder="Number plate">
-            </div>
-            <div class="time">
-                <input type="date">
-                <input type="time">
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+        <header>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rezervations.html" style="font-weight: bold;">Reservations</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <p>In any complication, please contact us for assistance.</p>
+        <div class="hero-content">
+            <h1>Reservations</h1>
+            <p class="subtitle">Secure your parking space at our upcoming events.</p>
+        </div>
+    </section>
+
+    <main class="contact-container">
+        <div class="contact-grid">
+            
+            <div class="contact-card">
+                <h2>Booking Info</h2>
+                <div class="info-item">
+                    <h3>Parking Access</h3>
+                    <p>Reservations are valid for the selected date and time. Please ensure your number plate is correct.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Assistance</h3>
+                    <p>In case of any complications, our staff is available 24/7 at the main entrance.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Contact Support</h3>
+                    <p>+421 123 456 789<br>support@eventorganisation.com</p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h2>Reservation Form</h2>
+                <form class="contact-form">
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Name" required>
+                        <input type="text" placeholder="Last name" required>
+                    </div>
+                    <input type="email" placeholder="Email@" required>
+                    <input type="tel" placeholder="Phone number" required>
+                    <input type="text" placeholder="Number plate (e.g. BL-123XY)" required>
+                    
+                    <div style="display: flex; gap: 10px;">
+                        <input type="date" required style="flex: 1;">
+                        <input type="time" required style="flex: 1;">
+                    </div>
+                    
+                    <button type="submit">Submit Reservation</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
 
     <footer class="footer">
         <p>&copy; 2026 Event Organisation. All rights reserved.</p>
     </footer>
 
 </body>
+
 </html>
