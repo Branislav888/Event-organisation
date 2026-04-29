@@ -166,14 +166,3 @@ h1 {
     padding: 30px 0;
     margin-top: 60px;
 }
-
-/* Responzivita pre menšie obrazovky */
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    h1 {
-        font-size: 40px;
-    }
-}
