@@ -140,6 +140,7 @@ h2 {
     object-fit: cover;
     z-index: -1;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .container {
