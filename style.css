@@ -34,6 +34,12 @@ header {
     letter-spacing: 1.5px;
     cursor: pointer;
     transition: all 0.5s ease;
+    border: none;
+    color: #333;
+}
+.nav-bar li a {
+    text-decoration: none;
+    color: inherit;
 }
 .nav-bar li:hover {
     color: #2d4a22;
