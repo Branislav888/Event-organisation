@@ -17,6 +17,7 @@ header {
     padding: 10px 40px;
     border-radius: 50px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    color: black;
 }
 
 .nav-bar ul {
@@ -25,6 +26,7 @@ header {
     gap: 30px;
     margin: 0;
     padding: 0;
+    color: black;
 }
 
 .nav-bar li {
@@ -34,15 +36,9 @@ header {
     letter-spacing: 1.5px;
     cursor: pointer;
     transition: all 0.5s ease;
-    border: none;
-    color: #333;
-}
-.nav-bar li a {
-    text-decoration: none;
-    color: inherit;
 }
 .nav-bar li:hover {
-    color: #2d4a22;
+    color: black;
     font-weight: bold;
 }
 
@@ -146,6 +142,7 @@ h2 {
     object-fit: cover;
     z-index: -1;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .container {
