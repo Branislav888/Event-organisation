@@ -5,59 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Organisation</title>
     <link rel="stylesheet" href="style.css">
-    <link rel ="banner" href="Images/logo.png">
 </head>
 <body>
-   <img src="Images/Background.png" alt="Background" class="background">
-    <header>
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="rezervations.html">Rezervations</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
+    <section class="hero-section">
+        <img src="Images/Background.png" alt="Background" class="background">
+
+        <header>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rezervations.html">Rezervations</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <div class="hero-content">
             <h1>Event Organisation</h1>
-            <p>Book the best events for your next gathering!</p>
-            <button class="cta-button">Get Started</button>
+            <p class="subtitle">Book the best events for your next gathering!</p>
         </div>
     </section>
 
-    <section class="services-section">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p class="subtitle">Choose the perfect event for your needs!</p>
+    <main class="container">
+        <h2>Our Services</h2>
+        
+        <div class="services-grid">
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <button onclick="window.location.href='weddings.html'" class="but-card">
-                    <img src="Images/Weddings.png" alt="Wedding">
-                    <h3>Weddings</h3>
-                    </button>
-                </div>
+            <a href="weddings.html" class="service-btn">
+                <img src="Images/Weddings.png" alt="Weddings">
+                <h3>Weddings</h3>
+            </a>
 
-                <div class="service-card">
-                    <button onclick="window.location.href='graduationparties.html'" class="but-card">
-                    <img src="Images/GraduationParties.png" alt="Graduation Party">
-                    <h3>Graduation Parties</h3>
-                    </button>
-                </div>
+            <a href="graduationparties.html" class="service-btn">
+                <img src="Images/GraduationParties.png" alt="Graduations">
+                <h3>Graduations</h3>
+            </a>
 
-                <div class="service-card">
-                    <button onclick="window.location.href='parties.html'" class="but-card">
-                    <img src="Images/Parties.png" alt="Party">
-                    <h3>Parties</h3>
-                    </button>
-                </div>
-            </div>
+            <a href="parties.html" class="service-btn">
+                <img src="Images/Parties.png" alt="Parties">
+                <h3>Parties</h3>
+            </a>
+
         </div>
-    </section>
+    </main>
 
     <footer class="footer">
         <p>&copy; 2026 Event Organisation. All rights reserved.</p>
