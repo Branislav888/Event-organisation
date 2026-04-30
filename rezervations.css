@@ -24,7 +24,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    border-radius: 0 0 20px 20px; 
+    border-radius: 0 0 20px 20px;
     filter: brightness(0.7);
 }
 
@@ -88,7 +88,7 @@ h1 {
 
 .contact-container {
     padding: 60px 5%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -114,14 +114,16 @@ h1 {
     padding-bottom: 15px;
 }
 
-.contact-form input {
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-family: Arial, sans-serif;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     background-color: #fafafa;
 }
 
@@ -136,7 +138,7 @@ h1 {
     cursor: pointer;
     transition: transform 0.3s ease;
     margin-top: 10px;
-    width: 100%; 
+    width: 100%;
 }
 
 .contact-form button:hover {
@@ -144,21 +146,22 @@ h1 {
     background-color: #333;
 }
 
-.info-item {
-    margin-bottom: 20px;
-}
-
-.info-item h3 {
-    font-family: Arial, sans-serif;
+.form-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
     font-size: 14px;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 5px;
+    text-align: center;
 }
 
-.info-item p {
-    margin: 0;
-    font-size: 16px; 
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
 .footer {
@@ -166,4 +169,13 @@ h1 {
     text-align: center;
     padding: 30px 0;
     margin-top: 60px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row > * {
+    flex: 1;
 }
