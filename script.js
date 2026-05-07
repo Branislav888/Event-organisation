@@ -12,21 +12,42 @@ const API_BASE = "http://localhost:9080";
 
 app.get("/contracts", async (req, res) => {
     try {
+        const response = await fetch(
+            `${API_BASE}/customers-contracts/v2/de_studentui/contracts`
+        );
 
-        const response = await fetch(`${API_BASE}/customers-contracts/v2/de_studentui/contracts`);
         const data = await response.json();
 
-        console.log("CELÉ DATA:");
+        console.log("📦 CONTRACTS:");
         console.log(data);
 
-        res.json(data); 
+        res.json(data);
 
     } catch (error) {
-        console.error("ERROR:", error);
-        res.status(500).json({ error: "Server error" });
+        console.error("❌ CONTRACTS ERROR:", error);
+        res.status(500).json({ error: "Server error (contracts)" });
+    }
+});
+
+app.get("/bookings", async (req, res) => {
+    try {
+        const response = await fetch(
+            `${API_BASE}/customers-contracts/v2/de_studentui/bookings`
+        );
+
+        const data = await response.json();
+
+        console.log("🚗 BOOKINGS:");
+        console.log(data);
+
+        res.json(data);
+
+    } catch (error) {
+        console.error("❌ BOOKINGS ERROR:", error);
+        res.status(500).json({ error: "Server error (bookings)" });
     }
 });
 
 app.listen(port, () => {
-    console.log(`Server beží na http://localhost:${port}`);
+    console.log(`🚀 Server beží na http://localhost:${port}`);
 });
