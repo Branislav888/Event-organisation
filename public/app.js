@@ -1,32 +1,133 @@
-console.log("app.js beží ✔");
 
-fetch("http://localhost:3000/contracts")
-  .then(response => response.json())
-  .then(data => {
+async function createBooking(event) {
 
-    console.log("📦 CELÉ DATA:");
-    console.log(data);
+    event.preventDefault();
 
-    if (!data.content) {
-      console.log("❌ Žiadne content pole:", data);
-      return;
+    const message =
+        document.getElementById("parkingMessage");
+
+
+    const firstName =
+        document.getElementById("parkName").value;
+
+    const lastName =
+        document.getElementById("parkLastName").value;
+
+    const email =
+        document.getElementById("parkEmail").value;
+
+    const phoneNumber =
+        document.getElementById("parkPhone").value;
+
+    const licensePlate =
+        document.getElementById("parkPlate").value;
+
+
+    const startDate =
+        document.getElementById("parkStartDate").value;
+
+    const startTime =
+        document.getElementById("parkStartTime").value;
+
+
+    const endDate =
+        document.getElementById("parkEndDate").value;
+
+    const endTime =
+        document.getElementById("parkEndTime").value;
+
+
+    const startDateTime =
+        new Date(`${startDate}T${startTime}`);
+
+    const endDateTime =
+        new Date(`${endDate}T${endTime}`);
+
+
+    if (endDateTime <= startDateTime) {
+
+        message.innerHTML =
+            "End date must be after start date";
+
+        message.style.color = "#ef4444";
+
+        return;
     }
 
-    data.content.forEach(contract => {
 
-      console.log("-----------------------------");
+    message.innerHTML =
+        "Creating reservation...";
 
-      console.log("🆔 ID:", contract.businessId ?? "N/A");
-      console.log("🏷️ LABEL:", contract.label ?? contract.name ?? "N/A");
-      console.log("📅 START:", contract.startTime ?? "N/A");
-      console.log("📅 END:", contract.endTime ?? "N/A");
-      console.log("📌 STATUS:", contract.status ?? "N/A");
-      console.log("👤 CUSTOMER:", contract.customer ?? "N/A");
-      console.log("🏢 OPERATOR:", contract.operatorName ?? "N/A");
+    message.style.color = "white";
 
-    });
 
-  })
-  .catch(error => {
-    console.error("❌ ERROR:", error);
-  });
+    try {
+
+        const response = await fetch("/api/reserve", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify({
+
+                firstName,
+                lastName,
+                email,
+                phoneNumber,
+                licensePlate,
+
+                startTime:
+                    startDateTime.toISOString(),
+
+                endTime:
+                    endDateTime.toISOString(),
+            }),
+        });
+
+
+        const result =
+            await response.json();
+
+
+        if (result.success) {
+
+            message.innerHTML =
+                "Parking reservation created successfully!";
+
+            message.style.color = "#22c55e";
+
+            document
+                .getElementById("parkingForm")
+                .reset();
+
+            console.log(result);
+        }
+
+        else {
+
+            console.error(result);
+
+            message.innerHTML =
+                result.message ||
+                "Reservation failed";
+
+            message.style.color = "#ef4444";
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        message.innerHTML =
+            "Server error";
+
+        message.style.color = "#ef4444";
+    }
+}
+
+document
+    .getElementById("parkingForm")
+    .addEventListener("submit", createBooking);

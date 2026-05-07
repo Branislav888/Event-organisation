@@ -4,69 +4,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservations & Party Planner | Event Organisation</title>
+    <title>Reservations & Party Planner</title>
+
     <link rel="stylesheet" href="reservations.css">
 </head>
 
 <body>
 
     <section class="hero-section">
-        <img src="Images/Background.png" alt="Background" class="background">
+
+        <img src="Images/Background.png"
+             alt="Background"
+             class="background">
+
         <header>
             <nav class="nav-bar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="rezervations.html" style="font-weight: bold;">Reservations</a></li>
+
+                    <li>
+                        <a href="rezervations.html"
+                           style="font-weight:bold;">
+                            Reservations
+                        </a>
+                    </li>
+
                     <li><a href="services.html">Services</a></li>
+
                     <li><a href="gallery.html">Gallery</a></li>
+
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
+
         <div class="hero-content">
             <h1>Reservations & Party</h1>
-            <p class="subtitle">Parking + celebrate with us</p>
-        </div>
-    </section>
 
-    <div id="list"></div>
+            <p class="subtitle">
+                Parking + celebrate with us
+            </p>
+        </div>
+
+    </section>
 
 
     <main class="contact-container">
+
         <div class="contact-grid">
+
             <div class="contact-card">
+
                 <h2>Parking Reservation</h2>
-                <form id="parkingForm" class="contact-form">
+
+                <form id="parkingForm"
+                      class="contact-form">
+
                     <div class="form-row">
-                        <input type="text" id="parkName" placeholder="Name" required>
-                        <input type="text" id="parkLastName" placeholder="Last name" required>
+
+                        <input
+                            type="text"
+                            id="parkName"
+                            placeholder="Name"
+                            required>
+
+                        <input
+                            type="text"
+                            id="parkLastName"
+                            placeholder="Last name"
+                            required>
+
                     </div>
-                    <input type="email" id="parkEmail" placeholder="Email@" required>
-                    <input type="tel" id="parkPhone" placeholder="Phone number" required>
-                    <input type="text" id="parkPlate" placeholder="Number plate (e.g. BL-123XY)" required>
+
+
+                    <input
+                        type="email"
+                        id="parkEmail"
+                        placeholder="Email"
+                        required>
+
+
+                    <input
+                        type="tel"
+                        id="parkPhone"
+                        placeholder="Phone number"
+                        required>
+
+
+                    <input
+                        type="text"
+                        id="parkPlate"
+                        placeholder="Number plate"
+                        required>
+
+
                     <div class="form-row">
-                        <input type="date" id="parkDate" required>
-                        <input type="time" id="parkTime" required>
+
+                        <div style="width:100%;">
+
+                            <label style="color:white;">
+                                Start Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="parkStartDate"
+                                max="2026-05-31"
+                                required>
+
+                        </div>
+
+
+                        <div style="width:100%;">
+
+                            <label style="color:white;">
+                                Start Time
+                            </label>
+
+                            <input
+                                type="time"
+                                id="parkStartTime"
+                                required>
+
+                        </div>
+
                     </div>
-                    <select id="parkSpaces">
-                        <option value="1">1 parking spot</option>
-                        <option value="2">2 parking spots</option>
-                        <option value="3">3 parking spots</option>
-                    </select>
-                    <button onclick="createBooking()" type="submit">Reserve Parking</button>
-                    <div id="parkingMessage" class="form-message"></div>
+
+
+                    <div class="form-row">
+
+                        <div style="width:100%;">
+
+                            <label style="color:white;">
+                                End Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="parkEndDate"
+                                max="2026-05-31"
+                                required>
+
+                        </div>
+
+
+                        <div style="width:100%;">
+
+                            <label style="color:white;">
+                                End Time
+                            </label>
+
+                            <input
+                                type="time"
+                                id="parkEndTime"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit">
+                        Reserve Parking
+                    </button>
+
+                    <div id="parkingMessage"
+                         class="form-message">
+                    </div>
+
                 </form>
+
             </div>
 
         </div>
+
     </main>
 
+
     <footer class="footer">
-        <p>&copy; 2026 Event Organisation. All rights reserved.</p>
+        <p>
+            &copy; 2026 Event Organisation.
+            All rights reserved.
+        </p>
     </footer>
 
-    
-    <script type="text/javascript" src="app.js"></script>
-</body>
 
+    <script src="app.js"></script>
+
+</body>
 </html>

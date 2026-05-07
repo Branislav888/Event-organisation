@@ -1,53 +1,112 @@
+
 const express = require("express");
-const cors = require("cors");
+const path = require("path");
 
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
-app.use(cors());
 app.use(express.json());
-app.use(express.static("public"));
 
-const API_BASE = "http://localhost:9080";
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/contracts", async (req, res) => {
+
+app.post("/api/reserve", async (req, res) => {
+
     try {
+
+        const {
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            licensePlate,
+            startTime,
+            endTime,
+        } = req.body;
+
+
         const response = await fetch(
-            `${API_BASE}/customers-contracts/v2/de_studentui/contracts`
+            "http://localhost:9080/customers-contracts/v2/de_studentui/consumers/visitor",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json",
+                },
+
+                body: JSON.stringify({
+
+                    firstName,
+                    lastName,
+                    email,
+                    phoneNumber,
+
+                    mediums: [
+                        {
+                            type: "LICENSEPLATE",
+
+                            encoding: "HEX",
+
+                            value: licensePlate,
+
+                            licencePlateRegion: {
+                                code: "BL",
+                                country: "SVK",
+                            },
+
+                            status: "VALIDATED",
+                        },
+                    ],
+
+                    visit: {
+
+                        startTime,
+                        endTime,
+
+                        contractBusinessId: "A2026X0qTl9Woq",
+
+                        productBusinessId: "PP000037",
+
+                        facilitiesBusinessId: [
+                            "FC2754897"
+                        ],
+                    },
+                }),
+            }
         );
+
 
         const data = await response.json();
 
-        console.log("📦 CONTRACTS:");
-        console.log(data);
+        if (!response.ok) {
 
-        res.json(data);
+            console.error(data);
+
+            return res.status(response.status).json({
+                success: false,
+                message:
+                    data.message || "Reservation failed",
+            });
+        }
+
+
+        res.json({
+            success: true,
+            reservation: data,
+        });
 
     } catch (error) {
-        console.error("❌ CONTRACTS ERROR:", error);
-        res.status(500).json({ error: "Server error (contracts)" });
+
+        console.error(error);
+
+        res.status(500).json({
+            success: false,
+            message: "Server error",
+        });
     }
 });
 
-app.get("/bookings", async (req, res) => {
-    try {
-        const response = await fetch(
-            `${API_BASE}/customers-contracts/v2/de_studentui/bookings`
-        );
+app.listen(PORT, () => {
 
-        const data = await response.json();
-
-        console.log("🚗 BOOKINGS:");
-        console.log(data);
-
-        res.json(data);
-
-    } catch (error) {
-        console.error("❌ BOOKINGS ERROR:", error);
-        res.status(500).json({ error: "Server error (bookings)" });
-    }
-});
-
-app.listen(port, () => {
-    console.log(`🚀 Server beží na http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });
