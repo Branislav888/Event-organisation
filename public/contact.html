@@ -26,37 +26,88 @@
         </header>
 
         <div class="hero-content">
-            <h1>Contact Us</h1>
-            <p class="subtitle">We are here to turn your ideas into reality.</p>
+            <h1>Book Your Celebration</h1>
+            <p class="subtitle">Turn your dream event into reality ✨</p>
         </div>
     </section>
 
     <main class="contact-container">
         <div class="contact-grid">
-            
+
+            <!-- CONTACT INFO -->
             <div class="contact-card">
-                <h2>Get in Touch</h2>
+                <h2>Contact Information</h2>
+
                 <div class="info-item">
                     <h3>Email</h3>
                     <p>info@eventorganisation.com</p>
                 </div>
+
                 <div class="info-item">
                     <h3>Phone</h3>
                     <p>+421 123 456 789</p>
                 </div>
+
                 <div class="info-item">
                     <h3>Address</h3>
-                    <p>123 Event Street, Bratislava<br>Slovakia</p>
+                    <p>
+                        123 Event Street, Bratislava<br>
+                        Slovakia
+                    </p>
                 </div>
             </div>
 
+            <!-- EVENT FORM -->
             <div class="contact-card">
-                <h2>Send a Message</h2>
-                <form class="contact-form" action="https://formspree.io/f/mqewrwdz" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="4" placeholder="How can we help you?" required></textarea>
-                    <button type="submit">Send Message</button>
+                <h2>Celebrate With Us</h2>
+
+                <!-- FORM -->
+                <form class="contact-form"
+                    action="https://formspree.io/f/mqewrwdz"
+                    method="POST">
+
+                    <input type="text"
+                        name="Full Name"
+                        placeholder="Your Full Name"
+                        required>
+
+                    <input type="email"
+                        name="Email"
+                        placeholder="Your Email"
+                        required>
+
+                    <input type="tel"
+                        name="Phone"
+                        placeholder="Phone Number"
+                        required>
+
+                    <input type="date"
+                        name="Event Date"
+                        required>
+
+                    <select name="Event Type" required>
+                        <option value="">Select Event Type</option>
+                        <option>Birthday Party</option>
+                        <option>Wedding</option>
+                        <option>Corporate Event</option>
+                        <option>Graduation Party</option>
+                        <option>Private Celebration</option>
+                    </select>
+
+                    <input type="number"
+                        name="Guests"
+                        placeholder="Number of Guests"
+                        required>
+
+                    <textarea name="Message"
+                        rows="5"
+                        placeholder="Tell us more about your dream event..."
+                        required></textarea>
+
+                    <button type="submit">
+                        Send Reservation
+                    </button>
+
                 </form>
             </div>
 
